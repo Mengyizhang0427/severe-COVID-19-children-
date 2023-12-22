@@ -55,7 +55,8 @@ if st.button("Submit"):
     pred=clf.predict_proba(X)[0][1]
     
     # Output prediction
-    st.text(f" The probability of severe COVID-19 in hospitalized children with Omicron variant infection is {pred}.")
+    st.text(" The probability of severe COVID-19 in hospitalized children ")
+    st.text(f"with Omicron variant infection is {pred}.")
 
    
     
