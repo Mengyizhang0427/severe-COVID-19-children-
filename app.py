@@ -17,10 +17,11 @@ TB=st.number_input("Total bilirubin(μmol/L,Norm:3.4-20.5)")
 GGT=st.number_input("Gamma-glutamyl transpeptidase(U/L,Norm:5-19)")
 CRP=st.number_input("C-reactive protein(mg/dl,Norm:<5)")
 LDH=st.number_input("Lactate dehydrogenase(U/L,Nrom:120-345)")
+Age=st.number_input("Age(Norm:0-18)")
 NAL=st.number_input("Neutrophil-to-lymphocyte ratio")
 PLT=st.number_input("Platelet(10^9/L,Norm:167-453)")
 AST=st.number_input("Aspartate aminotransferase(U/L,Norm:14-44)")
-Age=st.number_input("Age(Norm:0-18)")
+
 
 with open('RandomForest_10.pkl', 'rb') as f:
     clf = pickle.load(f)
@@ -35,8 +36,8 @@ if st.button("Submit"):
     
     # Unpickle classifier
     # Store inputs into dataframe
-    columns = ['CK','BUN','TB','GGT','CRP','LDH','NAL','PLT','AST']
-    X = pd.DataFrame([[CK,BUN,TB,GGT,CRP,LDH,NAL,PLT,AST]], 
+    columns = ['CK','BUN','TB','GGT','CRP','LDH','Age','NAL','PLT','AST']
+    X = pd.DataFrame([[CK,BUN,TB,GGT,CRP,LDH,Age,NAL,PLT,AST]], 
                      columns =columns )
     X = (X-data_min)/(data_max-data_min)
     if Age <1:
