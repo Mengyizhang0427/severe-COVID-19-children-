@@ -11,16 +11,17 @@ import pickle
 # Title
 st.header("RandomForest+TomekLinks for predicting severe COVID-19 in hospitalized children with Omicron variant infection")
 #input
-CK=st.number_input("Creatine kinase(U/L,Norm:24-229)")
-BUN=st.number_input("Blood urea nitrogen(mmol/L,Norm:2.7-7.0)")
-TB=st.number_input("Total bilirubin(μmol/L,Norm:3.4-20.5)")
-GGT=st.number_input("Gamma-glutamyl transpeptidase(U/L,Norm:5-19)")
-CRP=st.number_input("C-reactive protein(mg/dl,Norm:<5)")
-LDH=st.number_input("Lactate dehydrogenase(U/L,Nrom:120-345)")
-Age=st.number_input("Age(Norm:0-18)")
-NAL=st.number_input("Neutrophil-to-lymphocyte ratio")
-PLT=st.number_input("Platelet(10^9/L,Norm:167-453)")
-AST=st.number_input("Aspartate aminotransferase(U/L,Norm:14-44)")
+c1, c2 = st.columns(spec=2)
+CK=c1.number_input("Creatine kinase(U/L,Norm:24-229)")
+BUN=c2.number_input("Blood urea nitrogen(mmol/L,Norm:2.7-7.0)")
+TB=c1.number_input("Total bilirubin(μmol/L,Norm:3.4-20.5)")
+GGT=c2.number_input("Gamma-glutamyl transpeptidase(U/L,Norm:5-19)")
+CRP=c1.number_input("C-reactive protein(mg/dl,Norm:<5)")
+LDH=c2.number_input("Lactate dehydrogenase(U/L,Nrom:120-345)")
+Age=c1.number_input("Age(Norm:0-18)")
+NAL=c2.number_input("Neutrophil-to-lymphocyte ratio")
+PLT=c1.number_input("Platelet(10^9/L,Norm:167-453)")
+AST=c2.number_input("Aspartate aminotransferase(U/L,Norm:14-44)")
 
 
 with open('RandomForest_10.pkl', 'rb') as f:
